@@ -1,0 +1,28 @@
+{
+  "name": "parcel-react-client-starter",
+  "private": true,
+  "version": "0.0.0",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "@types/styled-components": "^5.1.34",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.5.0",
+    "remark-gfm": "^4.0.1",
+    "styled-components": "^6.1.17",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.2",
+    "parcel": "^2.14.0"
+  },
+  "@parcel/resolver-default": {
+    "packageExports": true
+  }
+}

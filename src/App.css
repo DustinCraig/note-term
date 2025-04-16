@@ -1,0 +1,79 @@
+/* This CSS is not used directly as we're using styled-components in App.tsx
+   We keep this file for reference or potential future use */
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 1px solid #555;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Additional styles to create smooth cursor and typing experience */
+textarea {
+  /* Create a GPU-accelerated environment for smoother animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  
+  /* Force hardware acceleration for smoother animations */
+  will-change: contents;
+  
+  /* Improve cursor animation on Blink browsers */
+  caret-animation: blink 1s step-end infinite;
+}
+
+@property --cursor-x {
+  syntax: "<length>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --cursor-y {
+  syntax: "<length>";
+  initial-value: 0;
+  inherits: false;
+}
+
+/* Smooth cursor transition animation */
+@keyframes move-cursor {
+  from {
+    --cursor-x: var(--from-x);
+    --cursor-y: var(--from-y);
+  }
+  to {
+    --cursor-x: var(--to-x);
+    --cursor-y: var(--to-y);
+  }
+}
