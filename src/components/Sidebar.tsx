@@ -1,8 +1,9 @@
-import { DIVIDER_COLOR, BACKGROUND_COLOR, TEXT_COLOR } from '../Styles';
-import { useFolders } from '../context/FolderContext';
-import { useNotes } from '../context/NoteContext';
-import Button from './Button';
-import styled from 'styled-components';
+import { DIVIDER_COLOR, BACKGROUND_COLOR, TEXT_COLOR } from "../Styles";
+import { useFolders } from "../context/FolderContext";
+import { useNotes } from "../context/NoteContext";
+import Button from "./Button";
+import TreeView from "./TreeView";
+import styled from "styled-components";
 
 const Sidebar = styled.div`
   width: 15%;
@@ -26,27 +27,26 @@ const SidebarTitle = styled.h1`
   margin-bottom: 0.5rem;
 `;
 
-
 export default () => {
   const { addFolder } = useFolders();
   const { addNote } = useNotes();
 
   const onCreateFolderClick = () => {
-    const folderName = prompt('Enter folder name:');
-    if (!folderName) { 
-      return prompt('Must enter a folder name');
+    const folderName = prompt("Enter folder name:");
+    if (!folderName) {
+      return prompt("Must enter a folder name");
     }
-    // Todo duplicate checking 
+    // Todo duplicate checking
     addFolder(folderName);
-  }
+  };
 
   const onCreateNoteClick = () => {
-    const noteName = prompt('Enter note name:');
+    const noteName = prompt("Enter note name:");
     if (!noteName) {
-      return prompt('Must enter a note name');
+      return prompt("Must enter a note name");
     }
-    addNote(noteName)
-  }
+    addNote(noteName);
+  };
 
   return (
     <Sidebar>
@@ -57,6 +57,7 @@ export default () => {
           <Button onClick={onCreateNoteClick}>+ Note</Button>
         </div>
       </SidebarHeader>
+      <TreeView />
     </Sidebar>
-  )
-}
+  );
+};

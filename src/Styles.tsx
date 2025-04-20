@@ -1,10 +1,13 @@
 import styled, { createGlobalStyle } from "styled-components";
 
-export const TEXT_COLOR = '#fff';
-export const DIVIDER_COLOR = '#333';
-export const BACKGROUND_COLOR = '#000';
-export const BUTTON_BORDER_COLOR = '#444'
-export const BUTTON_HOVER_BACKGROUND_COLOR = '#222';
+export const TEXT_COLOR = "#fff";
+export const DIVIDER_COLOR = "#333";
+export const BACKGROUND_COLOR = "#000";
+export const BUTTON_BORDER_COLOR = "#444";
+export const BUTTON_HOVER_BACKGROUND_COLOR = "#222";
+export const TREE_ITEM_HOVER = "#ccc";
+export const EDITOR_HEADER_BORDER_COLOR = "#333";
+export const SELECTION_COLOR = "rgba(255, 255, 255, 0.2)";
 
 export const GlobalStyles = createGlobalStyle`
 * {
